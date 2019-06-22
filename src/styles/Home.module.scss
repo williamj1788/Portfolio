@@ -1,0 +1,87 @@
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../Images/starry-sky-lake-mountain-trees-night-timothy-lake-united-states1.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Carter One', cursive;
+    text-align: center;
+    color: white;
+}
+
+.view{
+    position: relative;
+    width: 1px;
+    height: 82px;
+    text-overflow: clip;
+    overflow: hidden;
+    animation-name: cool;
+    animation-duration: 2s;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.title{
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 4rem;
+    margin: 0;
+}
+
+.desc{
+    font-size: 2rem;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.button{
+    width: 150px;
+    height: 50px;
+    margin-top: 25px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 2px;
+    color: white;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 500ms;
+    &:hover{
+        background-color: white;
+        color: black;
+    }
+}
+
+.fadeIn{
+    opacity: 0;
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes cool{
+    0%{
+        width: 1px;
+        margin-right: 582px;
+    }
+    100%{
+        width: 582px;
+        margin-right: 1px;
+    }
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
