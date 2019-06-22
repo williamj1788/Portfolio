@@ -1,0 +1,110 @@
+.about{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    overflow: hidden;
+}
+
+@mixin triangle($direction: 'up') {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 100px solid transparent;
+    @if $direction == 'up'{
+        border-top-color: black;
+    } @else{
+        border-bottom-color: black;
+    };
+}
+
+.topLeft{
+    @include triangle;
+    transform: translateX(-50%);
+}
+
+.topRight{
+    @include triangle;
+    right: 0;
+    transform: translateX(50%);
+}
+
+.bottomLeft{
+    @include triangle('down');
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.bottomRight{
+    @include triangle('down');
+    bottom: 0;
+    right: 0;
+    transform: translateX(50%);
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    margin-top: 20px;
+    font-size: 3rem;
+    font-family: 'Carter One', cursive;
+}
+
+.barWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.bar{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 3px solid black;
+    border-radius: 2px;
+    border-left-width: 50px;
+    border-right-width: 50px;
+}
+
+.summary{
+    width: 1100px;
+    margin: 20px auto 0 auto;
+    color: black;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.perkContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    margin: 20px auto 0 auto;
+}
+
+.perk{
+    width: 100%;
+    max-width: 450px;
+}
+
+.perkImg{
+    display: block;
+    width: auto;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.perkTitle{
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.perkDesc{
+    font-size: 1.4rem;
+    text-align: center;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './styles/Home.module.scss';
+import s from '../styles/Home.module.scss';
 
 class Home extends React.Component{
     constructor(props){
@@ -13,7 +13,7 @@ class Home extends React.Component{
             selected: 0,
             toggle: false,
         }
-        setTimeout(this.startFlash, 4000);
+        setTimeout(this.startFlash, 1000);
     };
 
     incrementSelected = () => {
