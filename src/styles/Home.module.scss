@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-image: url(../Images/starry-sky-lake-mountain-trees-night-timothy-lake-united-states1.jpg);
+    background-image: url(../Images/Background.jpg);
     background-size: cover;
     background-position: center;
     font-family: 'Carter One', cursive;
@@ -15,7 +15,7 @@
 .view{
     position: relative;
     width: 1px;
-    height: 82px;
+    height: 1px;
     text-overflow: clip;
     overflow: hidden;
     animation-name: cool;
@@ -33,9 +33,24 @@
 }
 
 .desc{
+    display: flex;
+    justify-content: center;
     font-size: 2rem;
     margin-top: 15px;
     margin-bottom: 0;
+}
+
+.textView{
+    width: 250px;
+    height: 40px;
+    display: inline-block;
+    margin-left: 8px;
+    overflow: hidden;
+}
+
+.perks{
+    margin: 0;
+    white-space: nowrap;
 }
 
 .button{
@@ -63,15 +78,57 @@
     animation-duration: 1s;
     animation-delay: 2.5s;
     animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+.flash{
+    animation-name: flash;
+    animation-duration: 3s;
+    animation-delay: 6.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.slideIn1{
+    text-align: left;
+    position: relative;
+    animation-name: slide1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.slideIn2{
+    text-align: left;
+    position: relative;
+    animation-name: slide2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
 }
 
 
 @keyframes cool{
     0%{
+        height: 1px;
+        border-right: 2px solid white;
         width: 1px;
         margin-right: 582px;
     }
+    10%{
+        border-right: 2px solid white;
+        height: 82px;
+        width: 1px;
+        margin-right: 582px;
+    }
+    90%{
+        border-right: 2px solid white;
+        height: 82px;
+        width: 582px;
+        margin-right: 1px;
+    }
     100%{
+        height: 82px;
         width: 582px;
         margin-right: 1px;
     }
@@ -83,5 +140,35 @@
     }
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes slide1{
+    0%{
+        top: -40px;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+@keyframes slide2{
+    0%{
+        top: -40px;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+@keyframes flash{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
     }
 }
