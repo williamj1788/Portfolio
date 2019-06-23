@@ -34,7 +34,9 @@ class Home extends React.Component{
         return(
             <section className={s.home}>
                 <div>
-                    <Title>Jacquez Williams</Title>
+                    <div className={s.content}>
+                        <Title>Jacquez Williams</Title>
+                    </div>
                     <div className={`${s.fadeIn} ${s.desc}`}>
                         <h2 style={{margin: 0, fontSize: '2rem'}}>I am </h2>
                         <div className={s.textView}>

@@ -6,11 +6,13 @@
     overflow: hidden;
 }
 
-@mixin triangle($direction: 'up') {
+@mixin triangle($size: 100px, $direction: 'up') {
     position: absolute;
     width: 0;
     height: 0;
-    border: 100px solid transparent;
+    border-width: $size;
+    border-style: solid;
+    border-color: transparent;
     @if $direction == 'up'{
         border-top-color: black;
     } @else{
@@ -30,13 +32,13 @@
 }
 
 .bottomLeft{
-    @include triangle('down');
+    @include triangle($direction: 'down');
     bottom: 0;
     transform: translateX(-50%);
 }
 
 .bottomRight{
-    @include triangle('down');
+    @include triangle($direction: 'down');
     bottom: 0;
     right: 0;
     transform: translateX(50%);
@@ -69,7 +71,8 @@
 }
 
 .summary{
-    width: 1100px;
+    width: 100%;
+    max-width: 1100px;
     margin: 20px auto 0 auto;
     color: black;
     text-align: center;
@@ -114,6 +117,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill{
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
 }
 
 .skillTitle{
@@ -123,15 +135,47 @@
 }
 
 .skillContainer{
-    width: 800px;
+    width: 100%;
     height: 30px;
     background-color: transparent;
     border: 3px solid grey;
     border-radius: 3px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .skillFill{
     height: 30px;
     background-color: gray;
+}
+
+@media(max-width: 975px){
+    .perkContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+};
+
+@media(max-width: 1050px){
+    .topLeft{
+        @include triangle(50px);
+    }
+    
+    .topRight{
+        @include triangle(50px);
+    }
+    
+    .bottomLeft{
+        @include triangle(40px, 'down');
+    }
+    
+    .bottomRight{
+        @include triangle(40px, 'down');
+    }
+}
+
+@media (max-width: 500px){
+    .perkDesc{
+        font-size: 1.5rem;
+    }
 }

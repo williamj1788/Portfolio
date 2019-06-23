@@ -3,3 +3,9 @@ html{
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
 }
+
+@media (max-width: 500px){
+    html{
+        font-size: 12px;
+    }
+}

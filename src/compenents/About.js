@@ -32,14 +32,14 @@ class About extends React.Component{
                     title={'Interactive'}
                     desc={"Websites don't have to static. I make my sites interactive to improve the overall user experience"}
                     alt={'Interactive Icon'}
-                    animation={'fadeInUp'}
+                    animation={window.innerWidth > 975 ? 'fadeInUp' : 'slideInLeft'}
                     />
                     <Perk 
                     image={CleanCodeIcon}
                     title={'Clean Code'}
                     desc={"Knowing how to write clean code is essential in order to maintain a codebase"}
                     alt={'Clean Code Icon'}
-                    animation={'slideInRight'}
+                    animation={window.innerWidth > 975 ? 'slideInRight' : 'slideInLeft'}
                     />
                 </PerkContainer>
                 <Title>Specialties</Title>
@@ -119,7 +119,7 @@ Specialties.prototypes = {
 
 const Skill = ({ title, fillAmount = 0.1 }) => {
     return(
-        <div>
+        <div className={s.skill}>
             <p className={s.skillTitle}>{title}</p>
             <div className={s.skillContainer}>
                 <div className={`${s.skillFill} wow animated slideInLeft`} style={{width: `${fillAmount * 100}%`}}></div>
