@@ -19,7 +19,7 @@ class About extends React.Component{
                 <Title>About</Title>
                 <Bar />
                 <Summary>I'm an energetic, highly motivated, and hard working programmer that is committed to self-development and building interactive and user-friendly websites.</Summary>
-                <div className={s.perkContainer}>
+                <PerkContainer>
                     <Perk 
                     image={SpeedIcon}
                     title={'Fast'}
@@ -32,7 +32,7 @@ class About extends React.Component{
                     title={'Interactive'}
                     desc={"Websites don't have to static. I make my sites interactive to improve the overall user experience"}
                     alt={'Interactive Icon'}
-                    animation={'slideInUp'}
+                    animation={'fadeInUp'}
                     />
                     <Perk 
                     image={CleanCodeIcon}
@@ -41,7 +41,16 @@ class About extends React.Component{
                     alt={'Clean Code Icon'}
                     animation={'slideInRight'}
                     />
-                </div>
+                </PerkContainer>
+                <Title>Specialties</Title>
+                <Specialties>
+                    <Skill title={'Front-end'} fillAmount={0.8} />
+                    <Skill title={'Back-end'} fillAmount={0.8} />
+                    <Skill title={'Interactivity'} fillAmount={0.65} />
+                    <Skill title={'Usability'} fillAmount={0.60} />
+                    <Skill title={'UI/UX'} fillAmount={0.3} />
+                    <Skill title={'Security'} fillAmount={0.3} />
+                </Specialties>
             </section>
         )
     }
@@ -73,6 +82,15 @@ Summary.prototypes = {
     children: PropTypes.element.isRequired
 }
 
+const PerkContainer = ({ children }) => {
+    return(
+        <div className={s.perkContainer}>{children}</div>
+    )
+}
+Summary.prototypes = {
+    children: PropTypes.element.isRequired
+}
+
 const Perk = ({ image, desc, alt, title, animation }) => {
     return(
         <div className={`${s.perk} wow animated ${animation}`}>
@@ -88,6 +106,31 @@ Perk.prototypes = {
     alt: PropTypes.string,
     title: PropTypes.string.isRequired,
     animation: PropTypes.string
+}
+
+const Specialties = ({ children }) => {
+    return(
+        <div className={s.Specialties}>{children}</div>
+    )
+}
+Specialties.prototypes = {
+    children: PropTypes.element.isRequired
+}
+
+const Skill = ({ title, fillAmount = 0.1 }) => {
+    return(
+        <div>
+            <p className={s.skillTitle}>{title}</p>
+            <div className={s.skillContainer}>
+                <div className={`${s.skillFill} wow animated slideInLeft`} style={{width: `${fillAmount * 100}%`}}></div>
+            </div>
+        </div>
+    )
+}
+
+Skill.prototypes = {
+    title: PropTypes.string.isRequired,
+    fillAmount: PropTypes.number,
 }
 
 export default About;

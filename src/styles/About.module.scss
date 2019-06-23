@@ -93,18 +93,45 @@
 .perkImg{
     display: block;
     width: auto;
-    height: 150px;
+    height: 125px;
     margin: 0 auto;
 }
 
 .perkTitle{
     text-align: center;
     margin: 0 auto;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 500;
 }
 
 .perkDesc{
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     text-align: center;
+}
+
+.Specialties{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skillTitle{
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.skillContainer{
+    width: 800px;
+    height: 30px;
+    background-color: transparent;
+    border: 3px solid grey;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skillFill{
+    height: 30px;
+    background-color: gray;
 }
