@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import LogoImage from '../Images/Logo.png';
 
 import s from '../styles/Navbar.module.scss';
+import { FaDownload } from 'react-icons/fa';
 
 
-class Navbar extends React.Component{
-    render(){
-        return(
-            <nav className={`${s.navbar} ${s.fadeIn}`}>
-                <Logo />
-                <LinkContainer />
-            </nav>
-        )
-    }
+function Navbar(){
+
+    const [isFixed, setIsFixed] = useState(false);
+
+    return(
+        <nav className={`${s.navbar} ${s.fadeIn}`}>
+            <Logo  visible={isFixed} />
+            <LinkContainer />
+        </nav>
+    )
 }
 
-const Logo = () => {
+const Logo = ({ visible }) => {
     return(
-        <img className={s.logo} src={LogoImage} alt="Logo" />
+        <img className={s.logo} style={{visibility: visible ? "visible" : "hidden"}} src={LogoImage} alt="Logo" />
     )
 }
 
@@ -29,15 +31,16 @@ const LinkContainer = () => {
             <Link>Projects</Link>
             <Link>Skills</Link>
             <Link>Contact</Link>
-            <Link>Resume</Link>
+            <Link Icon={FaDownload} href='/Resume.pdf' download='WilliamsResume' >Resume</Link>
         </div>
     )
 }
 
-const Link = ({ children }) => {
+const Link = ({ children, Icon, ...props }) => {
     return(
-        <div>
-            <a className={s.link}>{children}</a>
+        <div className={s.linkWrapper}>
+            <a className={s.link} {...props}>{children}</a>
+            {Icon && <Icon color={'white'} size={20} className={s.icon} />}
         </div>
     )
 }
