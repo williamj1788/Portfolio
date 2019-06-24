@@ -6,6 +6,7 @@ import WOW from 'wowjs';
 import Navbar from './compenents/Navbar';
 import Home from './compenents/Home';
 import About from './compenents/About';
+import Projects from './compenents/Projects';
 
 class App extends React.Component{
   constructor(props){
@@ -21,6 +22,7 @@ class App extends React.Component{
         <main>
           <Home />
           <About />
+          <Projects />
         </main>
       </div>
     );

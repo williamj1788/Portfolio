@@ -23,10 +23,11 @@ function Home(){
 
 
 
-const Title = ({ children }) => {
+const Title = ({ children , first}) => {
     return(
         <div className={s.view}>
-            <h1 className={s.title}>{children}</h1>
+            {first && <h1 className={s.title}>{children}</h1>}
+            {!first && <h2 className={s.title}>{children}</h2>}
         </div>
     )
 }

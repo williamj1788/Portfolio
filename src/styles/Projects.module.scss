@@ -1,0 +1,66 @@
+.projects{
+    padding-top: 1px;
+    padding-bottom: 20px;
+    background-color: black;
+    color: white;
+}
+
+
+
+.instruction{
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 5px 0;
+}
+
+.container{
+    box-sizing: border-box;
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.project{
+    margin-top: 150px;
+    display: flex;
+    &:nth-child(even){
+        .projectImg{
+            order: 2;
+        }
+        .projectText{
+            order: 1;
+            margin-left: 0;
+            margin-right: 30px;
+        }
+    }
+}
+
+.projectImg{
+    width: auto;
+    height: 400px;
+}
+
+.projectText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+
+.projectTitle{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.projectDesc{
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.projectTools{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0;
+}

@@ -56,7 +56,7 @@ class About extends React.Component{
     }
 }
 
-const Title = ({ children }) => {
+export const Title = ({ children }) => {
     return(
         <h2 className={`${s.title} wow animated slideInLeft`}>{children}</h2>
     )
@@ -65,10 +65,10 @@ Title.prototypes = {
     children: PropTypes.element.isRequired
 }
 
-const Bar = () => {
+export const Bar = ({ color = 'black' }) => {
     return(
         <div className={`${s.barWrapper} wow animated slideInRight`}>
-            <div className={s.bar}></div>
+            <div className={s.bar} style={{borderColor: color}}></div>
         </div>
     )
 }
