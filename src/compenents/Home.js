@@ -1,53 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import s from '../styles/Home.module.scss';
+import PropTypes from 'prop-types';
 
-class Home extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            words:[
-                "A Fast leaner",
-                "A Team Player",
-                "Motivated"
-            ],
-            selected: 0,
-            toggle: false,
-        }
-        setTimeout(this.startFlash, 1000);
-    };
-
-    incrementSelected = () => {
-        this.setState(state => {
-            return{
-                selected: state.selected + 1 >= state.words.length ? 0 : state.selected + 1,
-                toggle: !state.toggle
-            }
-        });
-    }
-
-    startFlash = () => {
-        setInterval(this.incrementSelected, 4000);
-    }
-    
-    
-    render(){
-        return(
-            <section className={s.home}>
-                <div>
-                    <div className={s.content}>
-                        <Title>Jacquez Williams</Title>
-                    </div>
-                    <div className={`${s.fadeIn} ${s.desc}`}>
-                        <h2 style={{margin: 0, fontSize: '2rem'}}>I am </h2>
-                        <div className={s.textView}>
-                            <Text {...this.state} />
-                        </div>
-                    </div>
-                    <button className={`${s.button} ${s.fadeIn}`}>View My Work</button>
+function Home(){
+    return(
+        <section className={s.home}>
+            <div>
+                <div className={s.content}>
+                    <Title>Jacquez Williams</Title>
                 </div>
-            </section>
-        )
-    }
+                <div className={`${s.fadeIn} ${s.desc}`}>
+                    <h2 style={{margin: 0, fontSize: '2rem'}}>I am </h2>
+                    <div className={s.textView}>
+                        <Text />
+                    </div>
+                </div>
+                <button className={`${s.button} ${s.fadeIn}`}>View My Work</button>
+            </div>
+        </section>
+    )
 }
 
 
@@ -59,13 +30,28 @@ const Title = ({ children }) => {
         </div>
     )
 }
+Title.prototypes = {
+    children: PropTypes.element.isRequired
+}
 
-const Text = ({ words, selected, toggle }) => {
-    let previous = selected - 1;
-    if(previous < 0){
-        previous = words.length + previous;
-    }
-    let current = selected;
+const Text = () => {
+
+    const [words] = useState(["A Fast leaner", "A Team Player", "Motivated"]);
+    const [index, setIndex] = useState(0);
+    const [toggle, setToggle] = useState(0);
+
+    useEffect(() => {
+        function startAnimation(){
+            setInterval(() => {
+                setIndex(i => i + 1 >= words.length ? 0 : i + 1);
+                setToggle(t => !t);
+            }, 4000);
+        }
+        setTimeout(startAnimation, 1000)
+    }, [words]);
+
+    const previous = index - 1 < 0 ? words.length - 1 : index - 1;
+    const current = index;
     return(
         <div className={toggle ? s.slideIn1 : s.slideIn2}>
             <p className={s.perks}>{words[current]}</p>

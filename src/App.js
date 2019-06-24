@@ -3,6 +3,7 @@ import './styles/Normalize.css';
 import './styles/index.scss';
 import WOW from 'wowjs';
 
+import Navbar from './compenents/Navbar';
 import Home from './compenents/Home';
 import About from './compenents/About';
 
@@ -15,10 +16,13 @@ class App extends React.Component{
   
   render(){
     return (
-      <section>
-        <Home />
-        <About />
-      </section>
+      <div>
+        <Navbar />
+        <main>
+          <Home />
+          <About />
+        </main>
+      </div>
     );
   }
 }
