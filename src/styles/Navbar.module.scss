@@ -9,6 +9,17 @@
     box-sizing: border-box;
 }
 
+.fixed{
+    position: fixed;
+    z-index: 100;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    animation-name: slideIn;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+}
+
 .logo{
     display: block;
     width: 40px;
@@ -58,5 +69,14 @@
     }
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes slideIn{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
     }
 }

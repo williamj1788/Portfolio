@@ -168,3 +168,81 @@
         opacity: 1;
     }
 }
+
+@media(max-width: 1150px){
+    .project{
+        flex-direction: column;
+        align-items: center;
+        &:nth-child(even){
+            .projectImg{
+                order: 1;
+            }
+            .projectText{
+                order: 2;
+                margin: 0;
+            }
+        }
+    }
+    .projectTitle, .projectDesc, .projectTools{
+        text-align: center;
+        margin: 20px 0;
+        padding: 0 20px;
+    }
+}
+
+@media(max-width: 650px){
+    .project{
+        margin-top: 75px;
+    }
+    .projectImg{
+        width: 450px;
+        height: 300px;
+        &:hover{
+            &::after{
+                border: 225px solid transparent;
+                border-right-color: rgba(0, 0, 0, 0.6);
+                border-top-width: 150px;
+                border-bottom-color: rgba(0, 0, 0, 0.6);
+                border-bottom-width: 150px;
+            }
+    
+            &::before{
+                border: 225px solid transparent;
+                border-left-color: rgba(0, 0, 0, 0.6);
+                border-top-width: 150px;
+                border-top-color: rgba(0, 0, 0, 0.6);
+                border-bottom-width: 150px;
+            }
+        }
+    }
+};
+
+@media(max-width: 500px){
+    .projectImg{
+        width: 300px;
+        height: 200px;
+        &:hover{
+            &::after{
+                border: 150px solid transparent;
+                border-right-color: rgba(0, 0, 0, 0.6);
+                border-top-width: 100px;
+                border-bottom-color: rgba(0, 0, 0, 0.6);
+                border-bottom-width: 100px;
+            }
+    
+            &::before{
+                border: 150px solid transparent;
+                border-left-color: rgba(0, 0, 0, 0.6);
+                border-top-width: 100px;
+                border-top-color: rgba(0, 0, 0, 0.6);
+                border-bottom-width: 100px;
+            }
+        }
+    }
+    .projectLink{
+        width: 100px;
+        height: 32.5px;
+        border: 2px solid white;
+        font-size: 1.5rem;
+    }
+};

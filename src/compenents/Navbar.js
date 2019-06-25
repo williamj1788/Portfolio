@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import LogoImage from '../Images/Logo.png';
 
@@ -7,11 +7,33 @@ import { FaDownload } from 'react-icons/fa';
 
 
 function Navbar(){
-
     const [isFixed, setIsFixed] = useState(false);
+    const [wasFixed, setWasFixed] = useState(false);
+
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+        const fixedTarget = 400;
+
+        if(currentScrollY > fixedTarget && !isFixed){
+           setIsFixed(true);
+           setWasFixed(true);
+        }else if(currentScrollY < fixedTarget && isFixed){
+            setIsFixed(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // in case of a refresh
+
+        return function(){
+            window.removeEventListener('scroll', handleScroll);
+        }
+    },[isFixed]);
+
 
     return(
-        <nav className={`${s.navbar} ${s.fadeIn}`}>
+        <nav className={`${s.navbar} ${isFixed ? s.fixed : !wasFixed ? s.fadeIn : ''}`}>
             <Logo  visible={isFixed} />
             <LinkContainer />
         </nav>
