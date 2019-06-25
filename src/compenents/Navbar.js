@@ -90,8 +90,8 @@ const LinkContainer = ({ hamburger }) => {
         <div className={`${s.linkContainer} ${hamburger ? s.linkContainerHamburger : ""}`}>
             <Link href='#about'>About</Link>
             <Link href='#projects'>Projects</Link>
-            <Link>Skills</Link>
-            <Link>Contact</Link>
+            <Link href='#skills' >Skills</Link>
+            <Link href='#contact'>Contact</Link>
             <Link Icon={FaDownload} href='/Resume.pdf' download='WilliamsResume' >Resume</Link>
         </div>
     )

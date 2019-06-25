@@ -16,9 +16,9 @@
     border-style: solid;
     border-color: transparent;
     @if $direction == 'up'{
-        border-top-color: black;
+        border-top-color: $light-black;
     } @else{
-        border-bottom-color: black;
+        border-bottom-color: $light-black;
     };
 }
 
@@ -66,7 +66,7 @@
     display: inline-block;
     width: 0;
     height: 0;
-    border: 3px solid black;
+    border: 3px solid $light-black;
     border-radius: 2px;
     border-left-width: 50px;
     border-right-width: 50px;
@@ -76,7 +76,7 @@
     width: 100%;
     max-width: 1100px;
     margin: 20px auto 0 auto;
-    color: black;
+    color: $light-black;
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
