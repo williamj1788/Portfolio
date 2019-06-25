@@ -70,7 +70,7 @@ function Navbar(){
                     <HamburgerMenu 
                     color={'#FFFFFF'} 
                     isOpen={isOpen} 
-                    menuClicked={() => {setIsOpen(!isOpen); console.log('sdf');}} 
+                    menuClicked={() => setIsOpen(!isOpen)} 
                     /> 
                 </div>
             : <LinkContainer />}
