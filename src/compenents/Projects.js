@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState} from 'react';
 
 import s from '../styles/Projects.module.scss';
 import { Title, Bar } from './About';
+import { FaCode, FaPlay } from 'react-icons/fa';
 
 import SchoolManagerImage from '../Images/SchoolManager.png'
 import QuezGamesImage from '../Images/QuezGames.png';
@@ -22,6 +23,8 @@ function ProjectSection() {
                 assignments and tests. This allows them to stay organize and 
                 never forget upcoming work.`}
                 tools={['React', "Node", 'Express', 'MongoDB']}
+                demo={'https://schoolmanager03.herokuapp.com/'}
+                source={'https://github.com/williamj1788/School-Manager'}
                 index={1}
                 />
                 <Project 
@@ -31,8 +34,10 @@ function ProjectSection() {
                 take orders from customers. It implements a RESTful API on 
                 the backend which allows the owner to create, delete, or edit 
                 any product or discount at any time. It also makes use of Google's Places 
-                and Maps API for easier address finding.`}
+                and Maps API for easy address finding.`}
                 tools={['React', "Node", 'Express', 'MongoDB', 'Scss']}
+                demo={'https://williamspizza.herokuapp.com/'}
+                source={'https://github.com/williamj1788/Williams-Pizza'}
                 index={2}
                 />
                 <Project 
@@ -44,6 +49,8 @@ function ProjectSection() {
                 tree to provide a more dynamic experience for the adventure 
                 game.`}
                 tools={['React', 'Scss' ,'Word API']}
+                demo={'https://quezgame.herokuapp.com/'}
+                source={'https://github.com/williamj1788/quezGames'}
                 index={3}
                 />
             </div>
@@ -51,10 +58,19 @@ function ProjectSection() {
     )
 }
 
-function Project({ image, title, desc, tools, index }) {
+function Project({ image, title, desc, tools, index, demo, source }) {
+
+    const [isHovering, setIsHovering] = useState(false);
+
     return(
         <div className={s.project}>
-            <img className={`${s.projectImg} wow animated ${index % 2 ? 'slideInLeft' : 'slideInRight'}`} src={image} alt={title} />
+            <div className={`${s.projectImg} wow animated ${index % 2 ? 'slideInLeft' : 'slideInRight'}`} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+                <img style={{width: '100%', height: '100%'}} src={image} alt={title} />
+                {isHovering && <div className={s.projectLinkContainer}>
+                    <a target='_blank' href={demo} className={s.projectLink}><span style={{display: 'flex', justifyContent:'center', alignItems: 'center'}}>Demo <FaPlay size={'0.8em'} className={s.projectIcon} /></span></a>
+                    <a target='_blank' href={source} className={s.projectLink} style={{marginTop: 40}}>Source <FaCode size={'1em'} className={s.projectIcon}/></a>
+                </div>}
+            </div>
             <div className={`${s.projectText} wow animated ${index % 2 ? 'slideInRight' : 'slideInLeft'}`}>
                 <p className={s.projectTitle}>{title}</p>
                 <p className={s.projectDesc}>{desc}</p>
