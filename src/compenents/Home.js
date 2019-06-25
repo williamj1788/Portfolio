@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function Home(){
     return(
-        <section className={s.home}>
+        <section className={s.home} id='home'>
             <div>
                 <div className={s.content}>
                     <Title>Jacquez Williams</Title>
@@ -15,7 +15,7 @@ function Home(){
                         <Text />
                     </div>
                 </div>
-                <button className={`${s.button} ${s.fadeIn}`}>View My Work</button>
+                <a data-scroll href='#projects' className={`${s.button} ${s.fadeIn}`}>View My Work</a>
             </div>
         </section>
     )

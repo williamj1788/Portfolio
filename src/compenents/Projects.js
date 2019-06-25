@@ -10,10 +10,10 @@ import WilliamsPizzaImage from '../Images/WilliamsPizza.png';
 
 function ProjectSection() {
     return(
-        <section className={s.projects}>
+        <section className={s.projects} id='projects'>
             <Title>Projects</Title>
             <Bar color={'white'} />
-            <p className={`${s.instruction} wow animated fadeInUp`}>Hover or click on the project image for a demo</p>
+            <p className={`${s.instruction} wow animated fadeInUp`}>Hover or click on the project image for a demo and source</p>
             <div className={s.container}>
                 <Project 
                 image={SchoolManagerImage}
@@ -59,16 +59,28 @@ function ProjectSection() {
 }
 
 function Project({ image, title, desc, tools, index, demo, source }) {
-
     const [isHovering, setIsHovering] = useState(false);
+    const [isActive, setIsActive] = useState(false);
+    const [timer, setTimer] = useState(null);
+
+    function handleMouseEnter() {
+        setIsHovering(true);
+        setTimer(setTimeout(() => setIsActive(true), 1300));
+    }
+
+    function handleMouseLeave() {
+        setIsHovering(false);
+        setIsActive(false);
+        clearTimeout(timer);
+    }
 
     return(
         <div className={s.project}>
-            <div className={`${s.projectImg} wow animated ${index % 2 ? 'slideInLeft' : 'slideInRight'}`} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+            <div className={`${s.projectImg} wow animated ${index % 2 ? 'slideInLeft' : 'slideInRight'}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <img style={{width: '100%', height: '100%'}} src={image} alt={title} />
                 {isHovering && <div className={s.projectLinkContainer}>
-                    <a target='_blank' href={demo} className={s.projectLink}><span style={{display: 'flex', justifyContent:'center', alignItems: 'center'}}>Demo <FaPlay size={'0.8em'} className={s.projectIcon} /></span></a>
-                    <a target='_blank' href={source} className={s.projectLink} style={{marginTop: 40}}>Source <FaCode size={'1em'} className={s.projectIcon}/></a>
+                    <a target='_blank' href={isActive ? demo : undefined} className={s.projectLink}><span style={{display: 'flex', justifyContent:'center', alignItems: 'center'}}>Demo <FaPlay size={'0.8em'} className={s.projectIcon} /></span></a>
+                    <a target='_blank' href={isActive ? source : undefined} className={s.projectLink} style={{marginTop: 40}}>Source <FaCode size={'1em'} className={s.projectIcon}/></a>
                 </div>}
             </div>
             <div className={`${s.projectText} wow animated ${index % 2 ? 'slideInRight' : 'slideInLeft'}`}>

@@ -11,7 +11,7 @@ class About extends React.Component{
 
     render(){
         return(
-            <section className={s.about}>
+            <section className={s.about} id='about'>
                 <div className={s.topLeft}></div>
                 <div className={s.topRight}></div>
                 <div className={s.bottomLeft}></div>

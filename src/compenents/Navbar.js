@@ -4,38 +4,77 @@ import LogoImage from '../Images/Logo.png';
 
 import s from '../styles/Navbar.module.scss';
 import { FaDownload } from 'react-icons/fa';
+import HamburgerMenu from 'react-hamburger-menu';
 
 
 function Navbar(){
     const [isFixed, setIsFixed] = useState(false);
     const [wasFixed, setWasFixed] = useState(false);
+    const [isHamburger, setIsHamburger] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     function handleScroll() {
         const currentScrollY = window.scrollY;
-        const fixedTarget = 400;
+        const fixedTarget = 600;
 
         if(currentScrollY > fixedTarget && !isFixed){
            setIsFixed(true);
            setWasFixed(true);
         }else if(currentScrollY < fixedTarget && isFixed){
             setIsFixed(false);
+        }else{
+            setIsOpen(false);
+        }
+    }
+    
+    function handleResize(){
+        const HamburgerTarget = 600;
+        if(window.innerWidth < HamburgerTarget && !isHamburger){
+            setIsHamburger(true);
+        }else if(window.innerWidth > HamburgerTarget && isHamburger){
+            setIsHamburger(false);
+            setIsOpen(false);
+        }
+    }
+
+    function handleClick(event){
+        if(isOpen && event.clientY > 275){
+            setIsOpen(false);
         }
     }
 
     useEffect(() => {
+        // in case of a refresh
+        handleScroll();
+        handleResize();
+    }, []);
+
+    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        handleScroll(); // in case of a refresh
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('click', handleClick);
 
         return function(){
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('click', handleClick);
         }
-    },[isFixed]);
+    },[isFixed, isHamburger, isOpen]);
 
 
     return(
-        <nav className={`${s.navbar} ${isFixed ? s.fixed : !wasFixed ? s.fadeIn : ''}`}>
-            <Logo  visible={isFixed} />
-            <LinkContainer />
+        <nav className={`${s.navbar} ${isHamburger || isFixed ? s.dark : ""} ${isFixed ? s.fixed : !wasFixed ? s.fadeIn : ''}`}>
+            <Logo  visible={isFixed || isHamburger} />
+            {isHamburger 
+            ?   <div style={{cursor: 'pointer'}}>
+                    <HamburgerMenu 
+                    color={'#FFFFFF'} 
+                    isOpen={isOpen} 
+                    menuClicked={() => {setIsOpen(!isOpen); console.log('sdf');}} 
+                    /> 
+                </div>
+            : <LinkContainer />}
+            {isOpen && <LinkContainer hamburger />}
         </nav>
     )
 }
@@ -46,11 +85,11 @@ const Logo = ({ visible }) => {
     )
 }
 
-const LinkContainer = () => {
+const LinkContainer = ({ hamburger }) => {
     return(
-        <div className={s.linkContainer}>
-            <Link>About</Link>
-            <Link>Projects</Link>
+        <div className={`${s.linkContainer} ${hamburger ? s.linkContainerHamburger : ""}`}>
+            <Link href='#about'>About</Link>
+            <Link href='#projects'>Projects</Link>
             <Link>Skills</Link>
             <Link>Contact</Link>
             <Link Icon={FaDownload} href='/Resume.pdf' download='WilliamsResume' >Resume</Link>
@@ -61,7 +100,7 @@ const LinkContainer = () => {
 const Link = ({ children, Icon, ...props }) => {
     return(
         <div className={s.linkWrapper}>
-            <a className={s.link} {...props}>{children}</a>
+            <a data-scroll className={s.link} style={{color: 'white'}} {...props}>{children}</a>
             {Icon && <Icon color={'white'} size={20} className={s.icon} />}
         </div>
     )
