@@ -7,6 +7,7 @@ import Navbar from './compenents/Navbar';
 import Home from './compenents/Home';
 import About from './compenents/About';
 import Projects from './compenents/Projects';
+import Skills from './compenents/Skills';
 
 class App extends React.Component{
   constructor(props){
@@ -23,6 +24,7 @@ class App extends React.Component{
           <Home />
           <About />
           <Projects />
+          <Skills />
         </main>
       </div>
     );
