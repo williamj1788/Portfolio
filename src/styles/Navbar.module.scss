@@ -85,6 +85,16 @@
     animation-timing-function: linear;
 }
 
+@media (min-width: 1981px){
+    .logo{
+        width: 70px;
+        height: 70px;
+    }
+    .linkContainer{
+        width: 800px;
+    }
+}
+
 @keyframes fade{
     0%{
         visibility: hidden;

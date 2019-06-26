@@ -51,7 +51,7 @@
 }
 
 .textView{
-    width: 250px;
+    width: 280px;
     height: 40px;
     display: inline-block;
     margin-left: 8px;
@@ -192,6 +192,21 @@
     }
 }
 
+@media(min-width: 1981px){
+    .content{
+        width: 890px;
+        height: 125px;
+    }
+    .textView{
+        width: 390px;
+        height: 60px;
+    }
+    .button{
+        width: 250px;
+        height: 84px;
+    }
+}
+
 @media(max-width: 650px){
     .title{
         font-size: 3rem;
@@ -210,7 +225,7 @@
     }
     .textView{
         height: 27px;
-        width: 165px;
+        width: 180px;
     }
     .button{
         font-size: 1.3rem;

@@ -9,6 +9,7 @@ import About from './compenents/About';
 import Projects from './compenents/Projects';
 import Skills from './compenents/Skills';
 import Contact from './compenents/Contact';
+import Footer from './compenents/Footer';
 
 class App extends React.Component{
   constructor(props){
@@ -27,6 +28,7 @@ class App extends React.Component{
           <Projects />
           <Skills />
           <Contact />
+          <Footer />
         </main>
       </div>
     );

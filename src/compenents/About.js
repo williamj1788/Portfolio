@@ -44,12 +44,12 @@ class About extends React.Component{
                 </PerkContainer>
                 <Title>Specialties</Title>
                 <Specialties>
-                    <Skill title={'Front-end'} fillAmount={0.8} />
-                    <Skill title={'Back-end'} fillAmount={0.8} />
-                    <Skill title={'Interactivity'} fillAmount={0.65} />
-                    <Skill title={'Usability'} fillAmount={0.60} />
-                    <Skill title={'UI/UX'} fillAmount={0.3} />
-                    <Skill title={'Security'} fillAmount={0.3} />
+                    <Skill title={'Front-end'} fillAmount={0.9} />
+                    <Skill title={'Back-end'} fillAmount={0.9} />
+                    <Skill title={'Responive Design'} fillAmount={0.75} />
+                    <Skill title={'Usability'} fillAmount={0.70} />
+                    <Skill title={'UI/UX'} fillAmount={0.5} />
+                    <Skill title={'Security'} fillAmount={0.5} />
                 </Specialties>
             </section>
         )

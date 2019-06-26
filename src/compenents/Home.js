@@ -37,7 +37,7 @@ Title.prototypes = {
 
 const Text = () => {
 
-    const [words] = useState(["A Fast leaner", "A Team Player", "Motivated"]);
+    const [words] = useState(["A Fast Learner", "A Team Player", "Self-Motivated"]);
     const [index, setIndex] = useState(0);
     const [toggle, setToggle] = useState(0);
 

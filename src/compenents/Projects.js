@@ -19,7 +19,7 @@ function ProjectSection() {
                 image={SchoolManagerImage}
                 title={'School Manager'}
                 desc={`Web application that helps students manage their 
-                school work better. Users can create classes and log future 
+                school work. Users can create classes and log future 
                 assignments and tests. This allows them to stay organize and 
                 never forget upcoming work.`}
                 tools={['React', "Node", 'Express', 'MongoDB']}
@@ -43,11 +43,10 @@ function ProjectSection() {
                 <Project 
                 image={QuezGamesImage}
                 title={'QuezGames'}
-                desc={`A gaming website that allows you to play up to 4 classic games. 
+                desc={`Gaming website that allows you to play up to 4 classic games. 
                 It makes use of a third party API to assist with random word 
-                generation for the guessing game and implements a dialog 
-                tree to provide a more dynamic experience for the adventure 
-                game.`}
+                generation and implements a dialog 
+                tree to provide a more dynamic experience.`}
                 tools={['React', 'Scss' ,'Word API']}
                 demo={'https://quezgame.herokuapp.com/'}
                 source={'https://github.com/williamj1788/quezGames'}
