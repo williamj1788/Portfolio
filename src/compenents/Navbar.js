@@ -92,7 +92,7 @@ const LinkContainer = ({ hamburger }) => {
             <Link href='#projects'>Projects</Link>
             <Link href='#skills' >Skills</Link>
             <Link href='#contact'>Contact</Link>
-            <Link Icon={FaDownload} href='/Resume.pdf' download='WilliamsResume' >Resume</Link>
+            <Link Icon={FaDownload} href='Resume.pdf'>Resume</Link>
         </div>
     )
 }

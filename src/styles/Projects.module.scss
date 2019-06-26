@@ -108,7 +108,7 @@
     text-decoration: none;
     cursor: pointer;
     transition: 500ms;
-
+    color: white;
     animation-name: delay-pointer-events;
     animation-delay: 1300ms;
     animation-fill-mode: forwards;
@@ -119,6 +119,13 @@
     &:visited{
         color: white;
     }
+    &:unvisited{
+        color: white;
+    }
+    &:active{
+        color: white;
+    }
+
 }
 
 .projectIcon{
