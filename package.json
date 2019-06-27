@@ -35,5 +35,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://williamj1788.github.io/Portfolio"
+  "homepage": "http://williamj1788.github.io/Portfolio",
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }
