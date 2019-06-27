@@ -5,6 +5,7 @@ import LogoImage from '../Images/Logo.png';
 import s from '../styles/Navbar.module.scss';
 import { FaDownload } from 'react-icons/fa';
 import HamburgerMenu from 'react-hamburger-menu';
+import jump from 'jump.js';
 
 
 function Navbar(){
@@ -97,10 +98,10 @@ const LinkContainer = ({ hamburger }) => {
     )
 }
 
-const Link = ({ children, Icon, ...props }) => {
+const Link = ({ children, Icon, href ,...props }) => {
     return(
-        <div className={s.linkWrapper}>
-            <a data-scroll className={s.link} style={{color: 'white'}} {...props}>{children}</a>
+        <div className={s.linkWrapper} onClick={() => jump(href)}>
+            <a data-scroll className={s.link} style={{color: 'white'}} href={href || undefined} {...props}>{children}</a>
             {Icon && <Icon color={'white'} size={20} className={s.icon} />}
         </div>
     )
