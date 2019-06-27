@@ -30,7 +30,7 @@ class About extends React.Component{
                     <Perk 
                     image={InteractiveIcon}
                     title={'Interactive'}
-                    desc={"Websites don't have to static. I make my sites interactive to improve the overall user experience"}
+                    desc={"Websites don't have to be static. I make my sites interactive to improve the overall user experience"}
                     alt={'Interactive Icon'}
                     animation={window.innerWidth > 975 ? 'fadeInUp' : 'slideInLeft'}
                     />
@@ -46,7 +46,7 @@ class About extends React.Component{
                 <Specialties>
                     <Skill title={'Front-end'} fillAmount={0.9} />
                     <Skill title={'Back-end'} fillAmount={0.9} />
-                    <Skill title={'Responive Design'} fillAmount={0.75} />
+                    <Skill title={'Responsive Design'} fillAmount={0.75} />
                     <Skill title={'Usability'} fillAmount={0.70} />
                     <Skill title={'UI/UX'} fillAmount={0.5} />
                     <Skill title={'Security'} fillAmount={0.5} />

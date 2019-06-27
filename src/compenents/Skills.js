@@ -40,7 +40,7 @@ function Skills() {
 
 function Skill({ img, title, index }) {
     return(
-        <div className={`${s.skill} wow animated flipInY`} data-wow-delay={`${index * 200}ms`}>
+        <div className={`${s.skill} ${window.innerWidth > 1000 && 'wow animated flipInY'}`} data-wow-delay={`${index * 200}ms`} data-wow-offset={-300}>
             <img className={s.skillImg} src={img} alt={title} />
             <p className={s.skillText}>{title}</p>
         </div>

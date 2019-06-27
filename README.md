@@ -18,7 +18,7 @@
 ## What I learned
 
 > * Pseudo Elements
-> * How to use third party libaries for better animations and how to create my own
+> * How to use third party libraries for better animations and how to create my own
 
 ## How to install
 
