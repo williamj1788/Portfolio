@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.a2c765d3.chunk.css",
-    "main.js": "/Portfolio/static/js/main.b083ae8f.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.b083ae8f.chunk.js.map",
+    "main.css": "/Portfolio/static/css/main.9b3b0507.chunk.css",
+    "main.js": "/Portfolio/static/js/main.b9b50e66.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.b9b50e66.chunk.js.map",
     "runtime~main.js": "/Portfolio/static/js/runtime~main.132fbc8c.js",
     "runtime~main.js.map": "/Portfolio/static/js/runtime~main.132fbc8c.js.map",
-    "static/js/2.8f2c88bf.chunk.js": "/Portfolio/static/js/2.8f2c88bf.chunk.js",
-    "static/js/2.8f2c88bf.chunk.js.map": "/Portfolio/static/js/2.8f2c88bf.chunk.js.map",
+    "static/js/2.70b82a2a.chunk.js": "/Portfolio/static/js/2.70b82a2a.chunk.js",
+    "static/js/2.70b82a2a.chunk.js.map": "/Portfolio/static/js/2.70b82a2a.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "precache-manifest.af83426f707f89136963881b5bb4b07c.js": "/Portfolio/precache-manifest.af83426f707f89136963881b5bb4b07c.js",
+    "precache-manifest.eda8c4ecea898c4288df8911a28eb3ae.js": "/Portfolio/precache-manifest.eda8c4ecea898c4288df8911a28eb3ae.js",
     "service-worker.js": "/Portfolio/service-worker.js",
-    "static/css/main.a2c765d3.chunk.css.map": "/Portfolio/static/css/main.a2c765d3.chunk.css.map",
+    "static/css/main.9b3b0507.chunk.css.map": "/Portfolio/static/css/main.9b3b0507.chunk.css.map",
     "static/media/Home.module.scss": "/Portfolio/static/media/Background.87badba9.jpg",
     "static/media/CleanCodeIcon.png": "/Portfolio/static/media/CleanCodeIcon.8c62d6a2.png",
     "static/media/CssLogo.png": "/Portfolio/static/media/CssLogo.df2215ab.png",
@@ -18,11 +18,11 @@
     "static/media/JSLogo.png": "/Portfolio/static/media/JSLogo.0e4fdce8.png",
     "static/media/JestLogo.png": "/Portfolio/static/media/JestLogo.a09153d7.png",
     "static/media/NodeLogo.jpg": "/Portfolio/static/media/NodeLogo.1c5e07f3.jpg",
-    "static/media/QuezGames.png": "/Portfolio/static/media/QuezGames.c5acef4f.png",
+    "static/media/QuezGames.png": "/Portfolio/static/media/QuezGames.eadd894b.png",
     "static/media/React.jsLogo.png": "/Portfolio/static/media/React.jsLogo.47ce6e77.png",
-    "static/media/SchoolManager.png": "/Portfolio/static/media/SchoolManager.62cf6a17.png",
+    "static/media/SchoolManager.png": "/Portfolio/static/media/SchoolManager.2381bd3d.png",
     "static/media/ScssLogo.png": "/Portfolio/static/media/ScssLogo.fcf40d6a.png",
     "static/media/Top.svg": "/Portfolio/static/media/Top.12869654.svg",
-    "static/media/WilliamsPizza.png": "/Portfolio/static/media/WilliamsPizza.eae3fca3.png"
+    "static/media/WilliamsPizza.png": "/Portfolio/static/media/WilliamsPizza.01d7dcfe.png"
   }
 }

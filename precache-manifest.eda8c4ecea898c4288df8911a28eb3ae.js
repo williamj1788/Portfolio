@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0af7768a012dc105399d06031dd30ace",
+    "revision": "d2bcc75e1d769ff9dae9c4c38c19e2e9",
     "url": "/Portfolio/index.html"
   },
   {
-    "revision": "10ddc975abdf2045c65f",
-    "url": "/Portfolio/static/css/main.a2c765d3.chunk.css"
+    "revision": "3b8f5c72d0226117f320",
+    "url": "/Portfolio/static/css/main.9b3b0507.chunk.css"
   },
   {
-    "revision": "7562ea7b0cc01534dfd3",
-    "url": "/Portfolio/static/js/2.8f2c88bf.chunk.js"
+    "revision": "aa261f4501d3a692c171",
+    "url": "/Portfolio/static/js/2.70b82a2a.chunk.js"
   },
   {
-    "revision": "10ddc975abdf2045c65f",
-    "url": "/Portfolio/static/js/main.b083ae8f.chunk.js"
+    "revision": "3b8f5c72d0226117f320",
+    "url": "/Portfolio/static/js/main.b9b50e66.chunk.js"
   },
   {
     "revision": "6b64d540f1308ee928ad",
@@ -48,16 +48,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Portfolio/static/media/NodeLogo.1c5e07f3.jpg"
   },
   {
-    "revision": "c5acef4f40648bd12da8ae71fba68184",
-    "url": "/Portfolio/static/media/QuezGames.c5acef4f.png"
+    "revision": "eadd894b5eea5761c8fba711d84984f0",
+    "url": "/Portfolio/static/media/QuezGames.eadd894b.png"
   },
   {
     "revision": "47ce6e77f039020ee2e76a10c1e988e9",
     "url": "/Portfolio/static/media/React.jsLogo.47ce6e77.png"
   },
   {
-    "revision": "62cf6a17da4f7ea588ff1cc7b56ebf0f",
-    "url": "/Portfolio/static/media/SchoolManager.62cf6a17.png"
+    "revision": "2381bd3d5f58e7b7a6ea21f3f6206ff2",
+    "url": "/Portfolio/static/media/SchoolManager.2381bd3d.png"
   },
   {
     "revision": "fcf40d6a94df7a5a340cc3d9e9f1aca1",
@@ -68,7 +68,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Portfolio/static/media/Top.12869654.svg"
   },
   {
-    "revision": "eae3fca3acccc81b693b0c7d03fd9a98",
-    "url": "/Portfolio/static/media/WilliamsPizza.eae3fca3.png"
+    "revision": "01d7dcfe165745989b04dcb755c5c25e",
+    "url": "/Portfolio/static/media/WilliamsPizza.01d7dcfe.png"
   }
 ]);
