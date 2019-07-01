@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/Normalize.css';
 import './styles/index.scss';
 import WOW from 'wowjs';
@@ -11,16 +11,15 @@ import Skills from './compenents/Skills';
 import Contact from './compenents/Contact';
 import Footer from './compenents/Footer';
 
-class App extends React.Component{
-  constructor(props){
-    super(props);
-    const wow = new WOW.WOW();
-    wow.init();
+export const jumpingContext = React.createContext();
+const wow = new WOW.WOW();
+wow.init();
 
-  }
-  
-  render(){
-    return (
+function App() {
+  const [isJumping, setIsJumping] = useState(false);
+
+  return (
+    <jumpingContext.Provider value={{isJumping, setIsJumping}}>
       <div>
         <Navbar />
         <main>
@@ -32,8 +31,8 @@ class App extends React.Component{
           <Footer />
         </main>
       </div>
-    );
-  }
+    </jumpingContext.Provider>
+  );
 }
 
 export default App;

@@ -1,8 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { jumpingContext } from '../App';
 import s from '../styles/Home.module.scss';
 import PropTypes from 'prop-types';
+import jump from 'jump.js';
 
 function Home(){
+    const { isJumping, setIsJumping } = useContext(jumpingContext);
+
+    function handleClick() {
+        if(!isJumping){
+            jump('#projects',{
+                callback: () => setIsJumping(false),
+            });
+            setIsJumping(true);
+        }
+    }
     return(
         <section className={s.home} id='home'>
             <div>
@@ -15,7 +27,7 @@ function Home(){
                         <Text />
                     </div>
                 </div>
-                <a data-scroll href='#projects' className={`${s.button} ${s.fadeIn}`}>View My Work</a>
+                <a data-scroll className={`${s.button} ${s.fadeIn}`} onClick={handleClick}>View My Work</a>
             </div>
         </section>
     )

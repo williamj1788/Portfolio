@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { jumpingContext } from '../App';
 
 import LogoImage from '../Images/Logo.png';
 
@@ -91,16 +92,25 @@ const LinkContainer = ({ hamburger }) => {
         <div className={`${s.linkContainer} ${hamburger ? s.linkContainerHamburger : ""}`}>
             <Link href='#about'>About</Link>
             <Link href='#projects'>Projects</Link>
-            <Link href='#skills' >Skills</Link>
+            <Link href='#skills'>Skills</Link>
             <Link href='#contact'>Contact</Link>
             <Link Icon={FaDownload} href='Resume.pdf'>Resume</Link>
         </div>
     )
 }
 
-const Link = ({ children, Icon, href ,...props }) => {
+const Link = ({ children, Icon, href, ...props }) => {
+    const { isJumping, setIsJumping } = useContext(jumpingContext);
+    function handleClick() {
+        if(!isJumping){
+            jump(href,{
+                callback: () => setIsJumping(false),
+            });
+            setIsJumping(true);
+        }
+    }
     return(
-        <div className={s.linkWrapper} onClick={() => jump(href)}>
+        <div className={s.linkWrapper} onClick={handleClick}>
             <a data-scroll className={s.link} style={{color: 'white'}} href={href || undefined} {...props}>{children}</a>
             {Icon && <Icon color={'white'} size={20} className={s.icon} />}
         </div>
