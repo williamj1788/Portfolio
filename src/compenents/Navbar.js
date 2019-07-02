@@ -46,7 +46,6 @@ function Navbar(){
     }
 
     useEffect(() => {
-        // in case of a refresh
         handleScroll();
         handleResize();
     }, []);
