@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { jumpingContext } from '../App';
 
 import LogoImage from '../Images/Logo.png';
+import GitHubSvg from '../Images/Github_icon.svg';
+import LinkedinLogoSvg from '../Images/linkedin-logo.svg';
 
 import s from '../styles/Navbar.module.scss';
 import { FaDownload } from 'react-icons/fa';
@@ -11,7 +13,6 @@ import jump from 'jump.js';
 
 function Navbar(){
     const [isFixed, setIsFixed] = useState(false);
-    const [wasFixed, setWasFixed] = useState(false);
     const [isHamburger, setIsHamburger] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +22,6 @@ function Navbar(){
 
         if(currentScrollY > fixedTarget && !isFixed){
            setIsFixed(true);
-           setWasFixed(true);
         }else if(currentScrollY < fixedTarget && isFixed){
             setIsFixed(false);
         }else{
@@ -64,8 +64,16 @@ function Navbar(){
 
 
     return(
-        <nav className={`${s.navbar} ${isHamburger || isFixed ? s.dark : ""} ${isFixed ? s.fixed : !wasFixed ? s.fadeIn : ''}`}>
-            <Logo  visible={isFixed || isHamburger} />
+        <nav className={`${s.navbar} ${(isHamburger || isFixed) ? s.dark : ""} ${isFixed ? s.fixed : ''}`}>
+            <div className={s.iconContainer}>
+                <Logo  visible={isFixed || isHamburger} href="#home" />
+                <a className={s.iconLink} href="https://github.com/williamj1788" target='_blank' rel="noopener noreferrer">
+                    <img src={GitHubSvg} alt="Github"/>
+                </a>
+                <a className={s.iconLink} href="https://www.linkedin.com/in/jacquez-williams-5a446817a/" target='_blank' rel="noopener noreferrer">
+                    <img src={LinkedinLogoSvg} alt="Linkedin"/>
+                </a>
+            </div>
             {isHamburger 
             ?   <div style={{cursor: 'pointer'}}>
                     <HamburgerMenu 
@@ -80,9 +88,18 @@ function Navbar(){
     )
 }
 
-const Logo = ({ visible }) => {
+const Logo = ({ visible, href }) => {
+    const { isJumping, setIsJumping } = useContext(jumpingContext);
+    function handleClick() {
+        if(!isJumping){
+            jump(href,{
+                callback: () => setIsJumping(false),
+            });
+            setIsJumping(true);
+        }
+    }
     return(
-        <img className={s.logo} style={{visibility: visible ? "visible" : "hidden"}} src={LogoImage} alt="Logo" />
+        <img className={s.logo} onClick={handleClick} style={{visibility: visible ? "visible" : "hidden"}} src={LogoImage} alt="Logo" />
     )
 }
 

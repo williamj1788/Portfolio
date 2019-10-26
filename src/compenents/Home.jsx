@@ -1,45 +1,33 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { jumpingContext } from '../App';
+import React, { useState, useEffect } from 'react';
 import s from '../styles/Home.module.scss';
 import PropTypes from 'prop-types';
-import jump from 'jump.js';
+import ArrowDown from '../Images/arrow-down.png';
 
 function Home(){
-    const { isJumping, setIsJumping } = useContext(jumpingContext);
-
-    function handleClick() {
-        if(!isJumping){
-            jump('#projects',{
-                callback: () => setIsJumping(false),
-            });
-            setIsJumping(true);
-        }
-    }
     return(
         <section className={s.home} id='home'>
             <div>
                 <div className={s.content}>
                     <Title>Jacquez Williams</Title>
                 </div>
-                <div className={`${s.fadeIn} ${s.desc}`}>
+                <div className={s.desc}>
                     <h2 style={{margin: 0, fontSize: '2rem'}}>I am </h2>
                     <div className={s.textView}>
                         <Text />
                     </div>
                 </div>
-                <a data-scroll className={`${s.button} ${s.fadeIn}`} onClick={handleClick}>View My Work</a>
             </div>
+            <img src={ArrowDown} alt="arrow-down"/>
         </section>
     )
 }
 
 
 
-const Title = ({ children , first}) => {
+const Title = ({ children }) => {
     return(
-        <div className={s.view}>
-            {first && <h1 className={s.title}>{children}</h1>}
-            {!first && <h2 className={s.title}>{children}</h2>}
+        <div>
+            <h1 className={s.title}>{children}</h1>
         </div>
     )
 }
@@ -49,7 +37,7 @@ Title.prototypes = {
 
 const Text = () => {
 
-    const [words] = useState(["A Fast Learner", "A Team Player", "Self-Motivated"]);
+    const [words] = useState(["A Front-End Developer", "A Back-End Developer", "A React Developer"]);
     const [index, setIndex] = useState(0);
     const [toggle, setToggle] = useState(0);
 

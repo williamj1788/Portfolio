@@ -22,10 +22,26 @@
     animation-fill-mode: forwards;
 }
 
+.iconContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.iconLink{
+    height: 25px;
+    img{
+        width: 25px;
+        height: 25px;
+    }
+}
+
 .logo{
     display: block;
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
 .linkContainer{

@@ -2,7 +2,7 @@ import React from 'react';
 import s from '../styles/Contact.module.scss';
 import top from '../Images/Top.svg';
 
-import { Title, Bar } from '../compenents/About';
+import { Title, Bar } from './About';
 // import Github from '../Images/Github_icon.png';
 
 function Contact() {
