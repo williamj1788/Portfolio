@@ -3,7 +3,10 @@ import s from '../styles/Contact.module.scss';
 import top from '../Images/Top.svg';
 
 import { Title, Bar } from './About';
-// import Github from '../Images/Github_icon.png';
+
+import Github from '../Images/Github_icon.svg';
+import Linkedin from '../Images/linkedin-logo.svg';
+import Email from '../Images/Email_icon.svg';
 
 function Contact() {
     return(
@@ -13,27 +16,41 @@ function Contact() {
             <Bar color="white" />
             <div className={`${s.linkContainer} wow animated fadeInUp`}>
                 <a className={s.link} href={'https://github.com/williamj1788'}  target='_blank' rel="noopener noreferrer">
-                    <svg enable-background="new 0 0 1024 1024" fill='white' height="45px" id="Layer_1" version="1.1" viewBox="0 0 1024 1024" width="45px" xmlns="http://www.w3.org/2000/svg" ><g><path clip-rule="evenodd" d="M667.575,684.036c29.498,42.729,31.01,91.438,30.54,140.826    c-0.57,59.8-0.111,119.604-0.05,179.408c0.022,19.207-0.445,19.731-19.1,19.729c-78.256-0.012-156.512-0.005-234.769-0.007    c-17.454,0-19.02-1.667-18.996-19.188c0.055-38.141,0.018-76.282,0.018-116.467c-13.499,1.382-27.038,2.831-40.589,4.143    c-66.12,6.401-123.748-10.497-168.359-62.186c-6.244-7.236-11.229-15.609-16.383-23.721    c-22.712-35.758-44.708-71.988-68.222-107.205c-7.278-10.897-18.543-19.128-27.959-28.601c-4.959-4.988-9.87-10.026-15.707-15.965    c16.315-10.603,31.94-7.718,46.736-5.44c36.94,5.688,61.914,28.566,81.694,58.915c9.845,15.105,20.032,30.51,32.675,43.164    c40.49,40.528,89.668,53.605,145.37,40.97c35.929-8.152,28.961-4.369,34.328-37.189c3.585-21.921,9.63-42.799,21.561-61.729    c1.978-3.141,3.617-6.494,6.054-10.913c-15.766-3.111-30.49-5.605-45.016-8.956c-57.636-13.29-110.782-35.758-152.841-78.96    c-44.573-45.789-68.698-100.626-70.376-164.982c-1.411-54.079-1.079-107.997,11.167-161.119    c7.859-34.098,22.069-64.649,47.012-89.985c3.865-3.928,6.128-13.232,4.327-18.359c-17.77-50.603-15.334-100.626,1.086-150.939    c2.823-8.653,5.798-10.738,14.439-8.377c31.695,8.664,58.827,25.018,81.457,48.459c15.443,15.996,29.577,33.263,44.914,50.663    c39.151-28.285,85.473-29.278,131.177-31.946c50.531-2.949,101.104-2.15,150.76,8.614c19.284,4.182,37.626,12.71,54.768,18.69    c20.14-19.135,40.941-38.615,61.418-58.433c18.493-17.898,40.396-29.047,65.105-35.647c9.458-2.526,14.257-0.28,17.46,8.951    c16.997,48.973,19.867,97.926,0.771,147.019c-2.784,7.161-4.695,13.899,1.884,20.188c33.405,31.945,50.024,72.171,53.556,117.249    c3.73,47.601,8.206,95.606,5.865,143.117c-4.347,88.167-48.115,154.374-124.163,198.896    c-40.771,23.87-85.285,36.961-131.779,43.855c-2.664,0.394-5.354,0.662-7.979,1.232    C670.368,682.044,669.446,682.926,667.575,684.036z" fill-rule="evenodd"/></g></svg>
+                    <img src={Github} alt="Github" width="45px" height="45px" />
                 </a>
                 <a className={s.link} href={'https://www.linkedin.com/in/jacquez-williams-5a446817a/'} target='_blank' rel="noopener noreferrer">
-                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                    width="45px" height="45px" viewBox="0 0 430.117 430.117"
-                    space="preserve" fill={'white'}>
-                    <g>
-                    <path id="LinkedIn" d="M430.117,261.543V420.56h-92.188V272.193c0-37.271-13.334-62.707-46.703-62.707
-                        c-25.473,0-40.632,17.142-47.301,33.724c-2.432,5.928-3.058,14.179-3.058,22.477V420.56h-92.219c0,0,1.242-251.285,0-277.32h92.21
-                        v39.309c-0.187,0.294-0.43,0.611-0.606,0.896h0.606v-0.896c12.251-18.869,34.13-45.824,83.102-45.824
-                        C384.633,136.724,430.117,176.361,430.117,261.543z M52.183,9.558C20.635,9.558,0,30.251,0,57.463
-                        c0,26.619,20.038,47.94,50.959,47.94h0.616c32.159,0,52.159-21.317,52.159-47.94C103.128,30.251,83.734,9.558,52.183,9.558z
-                        M5.477,420.56h92.184v-277.32H5.477V420.56z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-                    </svg>
+                    <img src={Linkedin} alt="linkedin" width="45px" height="45px" />
                 </a>
                 <a className={s.link} href='mailto:jacquezwilliams115@gmail.com'>
-                    <svg fill={'white'} height="45px" id="Layer_1" version="1.1" viewBox="0 0 16 16" width="45px" space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M8,10c-0.266,0-0.5-0.094-1-0.336L0,6v7c0,0.55,0.45,1,1,1h14c0.55,0,1-0.45,1-1V6L9,9.664C8.5,9.906,8.266,10,8,10z M15,2  H1C0.45,2,0,2.45,0,3v0.758l8,4.205l8-4.205V3C16,2.45,15.55,2,15,2z"/></svg>
+                    <img src={Email} alt="Email" width="45px" height="45px" />
                 </a>
             </div>
+            <Form />
         </section>
     )
+}
+
+function Form() {
+    return(
+        <form className={s.contactForm}>
+            <div style={{margin: "20px 0"}}>
+                <div>
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" id="name" required />
+                </div>
+                <div>
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" name="email" id="email" required />
+                </div>
+                <div>
+                    <label htmlFor="message">Message:</label>
+                    <textarea name="message" id="message" cols="30" rows="10" required minLength="20" required></textarea>
+                </div>
+                <button type="submit">Send A Message</button>
+            </div>
+        </form>  
+    )
+    
 }
 
 export default Contact;
