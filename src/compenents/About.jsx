@@ -14,7 +14,13 @@ class About extends React.Component{
                 <div className={s.bottomRight}></div>
                 <Title>About</Title>
                 <Bar />
-                <Summary>I'm an energetic, highly motivated, and hard working programmer that is committed to self-development and building interactive and user-friendly websites.</Summary>
+                <Summary>
+                    Hi, I'm Jacquez Williams. I have been passionate about 
+                    code since my freshman year in high school. Since then, 
+                    I have been very enthusiastic about learning new and 
+                    upcoming technologies. Currently, I spend most of my free 
+                    time building interactive and user-friendly web apps.
+                </Summary>
             </section>
         )
     }

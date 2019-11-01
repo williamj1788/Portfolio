@@ -4,8 +4,6 @@ import s from '../styles/Projects.module.scss';
 import { Title, Bar } from './About';
 import { FaCode, FaPlay } from 'react-icons/fa';
 
-import QuezGamesImage from '../Images/QuezGames.png';
-
 import WilliamsPizza1 from '../Images/williams_pizza_1.png';
 import WilliamsPizza2 from '../Images/williams_pizza_2.png';
 import WilliamsPizza3 from '../Images/williams_pizza_3.png';
@@ -32,19 +30,18 @@ function ProjectSection() {
                 <Project 
                 images={[WilliamsPizza1, WilliamsPizza2, WilliamsPizza3, WilliamsPizza4, WilliamsPizza5]}
                 title={'Williams Pizza'}
-                summary={`Pizzeria website which can
-                take orders from customers. It implements a RESTful API on 
-                the backend which allows the owner to create, delete, or edit 
-                any product or discount at any time. It also makes use of Google's Places 
-                and Maps API for easy address finding.`}
-                challenge={`This is the most comprehensive app that I have ever built. For a project 
+                summary={`PIzzaria website that allows users to order different kinds of pizza and other 
+                products. I have implemented an admin account that allows the owner to create, update, 
+                and delete products for the site. I also utilized Google's Maps and Places API for better 
+                address finding.`}
+                challenge={`For a project 
                 of this size, there were many new challenges that I had to face. Due to the size of 
                 the app, loading times were very long. I also needed to implement better security 
                 measures because a hacker could get access to the admin account and do serious damage 
                 to the website.`}
                 overcome={`I discovered several techniques on how to reduce the loading time of a website. 
                 For this project, I utilized image compression, which reduced the loading time of the 
-                app by 66%. Finally, I learned how to hash passwords and integrated JWTs, which allows 
+                landing page by 66%. Finally, I learned how to hash passwords and integrated JWTs, which allows 
                 for a more scalable and secure website.`}
                 tools={['React', "Node", 'Express', 'MongoDB', 'SCSS', 'Google Maps API']}
                 demo={'https://williamspizza.herokuapp.com/'}
@@ -56,7 +53,7 @@ function ProjectSection() {
                 title={'School Manager'}
                 summary={`Web application that helps students manage their 
                 school work. Users can create classes and log future 
-                assignments and tests. This allows them to stay organize and 
+                assignments and tests. This allows them to stay organized and 
                 never forget upcoming work.`}
                 challenge={`This was my first attempt at making a full-stack application. There 
                 were a lot of things that I didn't know how to do at first. For instance, I didn't know how
