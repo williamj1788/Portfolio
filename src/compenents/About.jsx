@@ -52,30 +52,4 @@ Summary.prototypes = {
     children: PropTypes.element.isRequired
 }
 
-const PerkContainer = ({ children }) => {
-    return(
-        <div className={s.perkContainer}>{children}</div>
-    )
-}
-Summary.prototypes = {
-    children: PropTypes.element.isRequired
-}
-
-const Perk = ({ image, desc, alt, title, animation }) => {
-    return(
-        <div className={`${s.perk} wow animated ${animation}`}>
-            <img src={image} alt={alt} className={s.perkImg} />
-            <p className={s.perkTitle}>{title}</p>
-            <p className={s.perkDesc}>{desc}</p>
-        </div>
-    )
-}
-Perk.prototypes = {
-    image: PropTypes.string.isRequired,
-    desc: PropTypes.string.isRequired,
-    alt: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    animation: PropTypes.string
-}
-
 export default About;

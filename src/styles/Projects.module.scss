@@ -116,6 +116,12 @@ body button.active{
         color: white;
     }
 
+    span{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
 }
 
 .projectIcon{
@@ -173,13 +179,29 @@ body button.active{
     .container{
         max-width: 2000px;
     }
-    .projectImg{
+
+    .projectImgView{
         width: 900px;
         height: 600px;
     }
+
+    .projectImg{
+        img{
+            width: 900px;
+            height: 600px;
+        }
+    }
+
+    .projectLinkContainer{
+        width: 500px;
+    }
+
     .projectLink{
-        width: 300px;
-        height: 98px;
+        padding: 0 10px;
+        display: block;
+        width: 180px;
+        height: 50px;
+        box-sizing: border-box;
     }
 }
 
@@ -201,9 +223,16 @@ body button.active{
         margin: 0;
     }
 
-    .projectImg{
+    .projectImgView{
         width: 615px;
         height: 350px;
+    }
+
+    .projectImg{
+        img{
+            width: 615px;
+            height: 350px;
+        }
     }
 }
 
@@ -211,17 +240,33 @@ body button.active{
     .project{
         margin-top: 75px;
     }
-    .projectImg{
+
+    .projectImgView{
         width: 440px;
         height: 250px;
+    }
+
+    .projectImg{
+        img{
+            width: 440px;
+            height: 250px;
+        }
     }
 };
 
 @media(max-width: 500px){
-    .projectImg{
+    .projectImgView{
         width: 350px;
         height: 200px;
     }
+    
+    .projectImg{
+        img{
+            width: 350px;
+            height: 200px;
+        }
+    }
+
     .projectLink{
         width: 100px;
         height: 32.5px;

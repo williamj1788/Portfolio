@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from '../styles/Contact.module.scss';
 import top from '../Images/Top.svg';
 
@@ -31,22 +31,56 @@ function Contact() {
 }
 
 function Form() {
+    const [form, setForm] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    const [pending, setPending] = useState(false);
+    const [message, setMessage] = useState('');
+
+    function onChange(event) {
+        setForm({...form, [event.target.name]: event.target.value});
+    }
+    function onSubmit(event) {
+        event.preventDefault();
+
+        if(pending){ return };
+
+        setPending(true);
+        fetch('/api/message', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(form)
+        })
+        .then(res => {
+            setPending(false);
+            setMessage(res.status !== 200 ? 'Internal Server Error. please try again' : "message sent");
+            document.getElementById('contact-form').reset();
+        }) 
+        
+    }
+
     return(
-        <form className={s.contactForm}>
-            <div style={{margin: "20px 0"}}>
+        <form id="contact-form" className={s.contactForm} onSubmit={onSubmit}>
+            <div style={{width: "100%",margin: "20px 0"}}>
                 <div>
                     <label htmlFor="name">Name:</label>
-                    <input type="text" id="name" required />
+                    <input type="text" id="name" name="name" onChange={onChange} required />
                 </div>
                 <div>
                     <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" id="email" required />
+                    <input type="email" name="email" id="email" onChange={onChange} required />
                 </div>
                 <div>
                     <label htmlFor="message">Message:</label>
-                    <textarea name="message" id="message" cols="30" rows="10" required minLength="20" required></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" required minLength="20" onChange={onChange} required></textarea>
                 </div>
-                <button type="submit">Send A Message</button>
+                {message && <span>{message}</span>}
+                <button type="submit" className={pending ? s.disabled : undefined} disabled={pending}>
+                    {pending && <div className="lds-dual-ring"></div>}
+                    {!pending && <span>Send A Message</span>}
+                </button>
             </div>
         </form>  
     )

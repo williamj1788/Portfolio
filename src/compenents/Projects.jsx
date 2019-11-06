@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import s from '../styles/Projects.module.scss';
 import { Title, Bar } from './About';
@@ -92,7 +92,7 @@ function Project(props) {
     return(
         <div className={s.project}>
             <ProjectImgSection animation={props.animation}>
-                {props.images.map(img => <ProjectImg image={img} alt={props.title} />)}
+                {props.images.map((img, i) => <ProjectImg image={img} alt={props.title} key={i} />)}
             </ProjectImgSection>
             <ProjectText {...props} />
         </div>
@@ -100,25 +100,43 @@ function Project(props) {
 }
 
 function ProjectImgSection({ animation, children }) {
+    const projectEl = useRef(null);
+
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        const inv = setInterval(() => {
-            setIndex(index => index >= children.length - 1 ? 0 : index + 1);
-        }, 3000);
+        let hasIntersected = false;
+        let inv;
+
+        const observer = new IntersectionObserver(ent => {
+            if(ent[0].isIntersecting && !hasIntersected){
+                hasIntersected = true;
+                
+                inv = setInterval(() => {
+                    setIndex(index => index >= children.length - 1 ? 0 : index + 1);
+                }, 3000);
+            }
+        }, {
+            threshold: 0.33
+        });
+
+        observer.observe(projectEl.current);
+
         return () => {
             clearInterval(inv);
         }
     }, []);
     return(
-        <div className={`${s.projectImg} wow animated ${animation}`}>
+        <div ref={projectEl} className={`${s.projectImg} wow animated ${animation}`}>
             <div className={s.projectImgView}>
                 <div style={{width: `${(children.length) * 100}%`, right: `${index * 100}%`}}>
                     {children}
                 </div>   
             </div>
             <div className={s.selectContainer}>
-                {children.map((c, i) => (<button onClick={() => setIndex(i)} className={i === index && s.active} />))}
+                {children.map((c, i) => (
+                    <button onClick={() => setIndex(i)} className={i === index ? s.active : undefined} key={i} />
+                ))}
             </div>
         </div>
     )
@@ -166,8 +184,8 @@ function LinkContainer({ demo, source }) {
             target='_blank' 
             rel="noopener noreferrer" 
             href={source} 
-            className={s.projectLink} 
-            >Source <FaCode size={'1em'} className={s.projectIcon}/>
+            className={s.projectLink}>
+                <span>Source <FaCode size={'1em'} className={s.projectIcon}/></span>
             </a>
         </div>
     )

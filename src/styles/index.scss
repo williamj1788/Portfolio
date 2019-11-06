@@ -5,6 +5,16 @@ html{
     font-family: 'Roboto', sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: grey; 
+    border-radius: 10px;
+}
+
 @media(min-width: 1981px){
     html{
         font-size: 27px;
@@ -14,5 +24,31 @@ html{
 @media (max-width: 500px){
     html{
         font-size: 12px;
+    }
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    &::after{
+        content: " ";
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin: 1px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        border-color: #fff transparent #fff transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+    }
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }

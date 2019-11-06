@@ -30,7 +30,7 @@ function Navbar(){
     }
     
     function handleResize(){
-        const HamburgerTarget = 600;
+        const HamburgerTarget = 800;
         if(window.innerWidth < HamburgerTarget && !isHamburger){
             setIsHamburger(true);
         }else if(window.innerWidth > HamburgerTarget && isHamburger){
