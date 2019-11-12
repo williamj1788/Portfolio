@@ -16,10 +16,6 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use((req, res, next) => {
-  next();
-})
-
 app.post('/api/message', (req, res) => {
   const { name, email, message } = req.body;
 
@@ -37,13 +33,7 @@ app.post('/api/message', (req, res) => {
 
 })
 
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.static(path.join(__dirname, 'build')));
-
-  app.get('*', (req, res) => {
-      res.sendfile(path.resolve(__dirname, 'build', 'index.html'));
-  });
-}
+app.use(express.static(path.join(__dirname, 'build')));
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {console.log(`Server running on port ${PORT}...`)});

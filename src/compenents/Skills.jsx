@@ -17,6 +17,7 @@ import Jest from '../Images/JestLogo.png';
 
 
 function Skills() {
+    console.log(Jest);
     return(
         <section className={s.skills} id="skills">
             <Title>Skills</Title>
