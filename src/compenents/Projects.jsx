@@ -46,7 +46,7 @@ function ProjectSection() {
                 tools={['React', "Node", 'Express', 'MongoDB', 'SCSS', 'Google Maps API']}
                 demo={'https://williamspizza.herokuapp.com/'}
                 source={'https://github.com/williamj1788/Williams-Pizza'}
-                animation={'slideInLeft'}
+                animation={'slideInRight'}
                 />
                 <Project 
                 images={[SchoolManager1, SchoolManager2, SchoolManager3, SchoolManager4]}
@@ -109,6 +109,7 @@ function ProjectImgSection({ animation, children }) {
         let inv;
 
         const observer = new IntersectionObserver(ent => {
+            // only want to set the interval once per project
             if(ent[0].isIntersecting && !hasIntersected){
                 hasIntersected = true;
                 

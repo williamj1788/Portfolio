@@ -17,12 +17,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use((req, res, next) => {
-  console.log("Hello There");
   next();
 })
 
 app.post('/api/message', (req, res) => {
-  console.log(req.body);
   const { name, email, message } = req.body;
 
   transporter.sendMail({
