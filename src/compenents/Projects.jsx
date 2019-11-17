@@ -30,7 +30,7 @@ function ProjectSection() {
                 <Project 
                 images={[WilliamsPizza1, WilliamsPizza2, WilliamsPizza3, WilliamsPizza4, WilliamsPizza5]}
                 title={'Williams Pizza'}
-                summary={`PIzzaria website that allows users to order different kinds of pizza and other 
+                summary={`Pizzaria website that allows users to order different kinds of pizza and other 
                 products. I have implemented an admin account that allows the owner to create, update, 
                 and delete products for the site. I also utilized Google's Maps and Places API for better 
                 address finding.`}
@@ -44,7 +44,7 @@ function ProjectSection() {
                 landing page by 66%. Finally, I learned how to hash passwords and integrated JWTs, which allows 
                 for a more scalable and secure website.`}
                 tools={['React', "Node", 'Express', 'MongoDB', 'SCSS', 'Google Maps API']}
-                demo={'https://williamspizza.herokuapp.com/'}
+                demo={'http://williamspizza.ml'}
                 source={'https://github.com/williamj1788/Williams-Pizza'}
                 animation={'slideInRight'}
                 />
@@ -62,7 +62,7 @@ function ProjectSection() {
                 overcome={`By the time I finished the app, I had learned how to make a MERN stack 
                 application while also learning how to connect and manage a MongoDB database.`}
                 tools={['React', "Node", 'Express', 'MongoDB', 'React Spring']}
-                demo={'https://schoolmanager03.herokuapp.com/'}
+                demo={'http://schoolmanager1.ml'}
                 source={'https://github.com/williamj1788/School-Manager'}
                 animation={'slideInRight'}
                 />
@@ -79,7 +79,7 @@ function ProjectSection() {
                 dialog system which allows for a more dynamic narration of the adventure game. Additionally, 
                 I learned how to connect to a public API to enhance my app.`}
                 tools={['React', 'SCSS' ,'Word API']}
-                demo={'https://quezgame.herokuapp.com/'}
+                demo={'https://williamj1788.github.io/quezGames'}
                 source={'https://github.com/williamj1788/quezGames'}
                 animation={'slideInRight'}
                 />
