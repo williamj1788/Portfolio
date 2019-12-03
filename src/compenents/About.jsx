@@ -16,7 +16,7 @@ class About extends React.Component{
                 <Bar />
                 <Summary>
                     Hi, I'm Jacquez Williams. I have been passionate about 
-                    code since my freshman year in high school. Since then, 
+                    code since my sophomore year in high school. Since then, 
                     I have been very enthusiastic about learning new and 
                     upcoming technologies. Currently, I spend most of my free 
                     time building interactive and user-friendly web apps.
