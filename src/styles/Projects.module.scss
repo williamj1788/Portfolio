@@ -1,276 +1,281 @@
-@import './variables.scss';
+@import "./variables.scss";
 
-.projects{
-    padding-top: 1px;
-    padding-bottom: 50px;
-    background-color: $light-black;
-    color: white;
-    overflow: hidden;
+.projects {
+  padding-top: 1px;
+  padding-bottom: 50px;
+  background-color: $light-black;
+  color: white;
+  overflow: hidden;
 }
 
-.instruction{
-    text-align: center;
-    font-size: 1.3rem;
-    margin: 5px 0;
+.instruction {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 5px 0;
 }
 
-.container{
-    box-sizing: border-box;
-    margin-top: 50px;
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
+.container {
+  box-sizing: border-box;
+  margin-top: 50px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.project{
-    margin-top: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.project {
+  margin-top: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.projectImg{
-    img{
-        width: 750px;
-        height: 425px;
-    }
-}
-
-.projectImgView{
+.projectImg {
+  img {
     width: 750px;
     height: 425px;
-    overflow: hidden;
-    div {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        transition: 1000ms ease-in-out;
-    }
+  }
 }
 
-body button.active{
-    background-color: rgb(80, 80, 80);
-}
-
-.selectContainer{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    button{
-        cursor: pointer;
-        width: 20px;
-        height: 20px;
-        background-color: white;
-        border-radius: 50%;
-        border: 0;
-        margin: 0 10px;
-        display: block;
-        z-index: 99;
-        transition: 200ms linear;
-
-        &:hover{
-            background-color: rgb(179, 179, 179);
-        }
-    }
-}
-
-.projectLinkContainer{
-    width: 300px;
-    margin: 20px auto 0 auto;
+.projectImgView {
+  width: 750px;
+  height: 425px;
+  overflow: hidden;
+  div {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    transition: 1000ms ease-in-out;
+  }
 }
 
-.projectLink{
-    width: 123px;
-    height: 40px;
-    background-color: transparent;
-    border: 3px solid white;
+body button.active {
+  background-color: rgb(80, 80, 80);
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-decoration: none;
+.selectContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  button {
     cursor: pointer;
-    transition: 500ms;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    border: 0;
+    margin: 0 10px;
+    display: block;
+    z-index: 99;
+    transition: 200ms linear;
+
+    &:hover {
+      background-color: rgb(179, 179, 179);
+    }
+  }
+}
+
+.projectLinkContainer {
+  width: 300px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projectLink {
+  width: 123px;
+  height: 40px;
+  background-color: transparent;
+  border: 3px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 500ms;
+  color: white;
+  animation-name: delay-pointer-events;
+  animation-delay: 1300ms;
+  animation-fill-mode: forwards;
+
+  &:hover {
+    background-color: black;
+  }
+  &:visited {
     color: white;
-    animation-name: delay-pointer-events;
-    animation-delay: 1300ms;
-    animation-fill-mode: forwards;
+  }
+  &:unvisited {
+    color: white;
+  }
+  &:active {
+    color: white;
+  }
 
-    &:hover{
-        background-color: black;
-    }
-    &:visited{
-        color: white;
-    }
-    &:unvisited{
-        color: white;
-    }
-    &:active{
-        color: white;
-    }
-
-    span{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-}
-
-.projectIcon{
-    margin-left: 10px;
-}
-
-.projectText{
-    max-width: 1000px;
-    width: 100%;
+  span {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+  }
 }
 
-.projectTitle{
-    font-size: 2rem;
-    font-weight: bold;
+.projectIcon {
+  margin-left: 10px;
+}
+
+.projectText {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.projectDescTitle {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.projectDesc {
+  font-weight: normal;
+  margin: 0;
+  text-align: center;
+}
+
+.projectTools {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1981px) {
+  .container {
+    max-width: 2000px;
+  }
+
+  .projectImgView {
+    width: 900px;
+    height: 600px;
+  }
+
+  .projectImg {
+    img {
+      width: 900px;
+      height: 600px;
+    }
+  }
+
+  .projectLinkContainer {
+    width: 500px;
+  }
+
+  .projectLink {
+    padding: 0 10px;
+    display: block;
+    width: 180px;
+    height: 50px;
+    box-sizing: border-box;
+  }
+
+  .projectText {
+    max-width: 1300px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .project {
+    flex-direction: column;
+    align-items: center;
+  }
+  .projectTitle,
+  .projectTools {
+    text-align: center;
+    margin: 5px 0;
+    padding: 0 20px;
+  }
+  .projectDesc,
+  .projectDescTitle {
+    text-align: center;
+    padding: 0 20px;
+  }
+  .projectText {
     margin: 0;
-    margin-top: 10px;
-    text-align: center;
+  }
+
+  .projectImgView {
+    width: 615px;
+    height: 350px;
+  }
+
+  .projectImg {
+    img {
+      width: 615px;
+      height: 350px;
+    }
+  }
 }
 
-.projectDescTitle{
-    margin-top: 20px;
-    margin-bottom: 0px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-align: center;
+@media (max-width: 650px) {
+  .project {
+    margin-top: 75px;
+  }
+
+  .projectImgView {
+    width: 440px;
+    height: 250px;
+  }
+
+  .projectImg {
+    img {
+      width: 440px;
+      height: 250px;
+    }
+  }
 }
 
-.projectDesc{
-    font-weight: normal;
-    margin: 0;
-    text-align: center;
+@media (max-width: 500px) {
+  .projectImgView {
+    width: 350px;
+    height: 200px;
+  }
+
+  .projectImg {
+    img {
+      width: 350px;
+      height: 200px;
+    }
+  }
+
+  .projectLink {
+    width: 100px;
+    height: 32.5px;
+    border: 2px solid white;
+    font-size: 1.5rem;
+  }
 }
-
-.projectTools{
-    font-weight: bold;
-    font-size: 1.4rem;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    text-align: center;
-}
-
-@keyframes fade{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-
-@media (min-width: 1981px){
-    .container{
-        max-width: 2000px;
-    }
-
-    .projectImgView{
-        width: 900px;
-        height: 600px;
-    }
-
-    .projectImg{
-        img{
-            width: 900px;
-            height: 600px;
-        }
-    }
-
-    .projectLinkContainer{
-        width: 500px;
-    }
-
-    .projectLink{
-        padding: 0 10px;
-        display: block;
-        width: 180px;
-        height: 50px;
-        box-sizing: border-box;
-    }
-}
-
-@media(max-width: 1150px){
-    .project{
-        flex-direction: column;
-        align-items: center;
-    }
-    .projectTitle, .projectTools{
-        text-align: center;
-        margin: 5px 0;
-        padding: 0 20px;
-    }
-    .projectDesc, .projectDescTitle{
-        text-align: center;
-        padding: 0 20px;
-    }
-    .projectText{
-        margin: 0;
-    }
-
-    .projectImgView{
-        width: 615px;
-        height: 350px;
-    }
-
-    .projectImg{
-        img{
-            width: 615px;
-            height: 350px;
-        }
-    }
-}
-
-@media(max-width: 650px){
-    .project{
-        margin-top: 75px;
-    }
-
-    .projectImgView{
-        width: 440px;
-        height: 250px;
-    }
-
-    .projectImg{
-        img{
-            width: 440px;
-            height: 250px;
-        }
-    }
-};
-
-@media(max-width: 500px){
-    .projectImgView{
-        width: 350px;
-        height: 200px;
-    }
-    
-    .projectImg{
-        img{
-            width: 350px;
-            height: 200px;
-        }
-    }
-
-    .projectLink{
-        width: 100px;
-        height: 32.5px;
-        border: 2px solid white;
-        font-size: 1.5rem;
-    }
-};
