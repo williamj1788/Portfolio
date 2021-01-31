@@ -119,10 +119,7 @@ function ProjectImgSection({ animation, children }) {
             setScrollInterval(setInterval(() => {
                 setIndex(index => index >= children.length - 1 ? 0 : index + 1);
             }, 3000));
-
-        }, {
-            threshold: 0.33
-        });
+        }, { threshold: 0.33 });
 
         observer.observe(projectEl.current);
 
@@ -137,7 +134,6 @@ function ProjectImgSection({ animation, children }) {
         setScrollInterval(setInterval(() => {
             setIndex(index => index >= children.length - 1 ? 0 : index + 1);
         }, 3000));
-
     }
     return(
         <div ref={projectEl} className={`${s.projectImg} wow animated ${animation}`}>
