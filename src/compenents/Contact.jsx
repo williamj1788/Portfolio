@@ -9,13 +9,13 @@ import Linkedin from '../Images/linkedin-logo.svg';
 import Email from '../Images/Email_icon.svg';
 
 function Contact() {
-    return(
+    return (
         <section id='contact' className={s.contact}>
             <img className={s.top} src={top} alt="stuff" />
             <Title>Contact</Title>
             <Bar color="white" />
             <div className={`${s.linkContainer} wow animated fadeInUp`}>
-                <a className={s.link} href={'https://github.com/williamj1788'}  target='_blank' rel="noopener noreferrer">
+                <a className={s.link} href={'https://github.com/williamj1788'} target='_blank' rel="noopener noreferrer">
                     <img src={Github} alt="Github" width="45px" height="45px" />
                 </a>
                 <a className={s.link} href={'https://www.linkedin.com/in/jacquez-williams-5a446817a/'} target='_blank' rel="noopener noreferrer">
@@ -36,34 +36,33 @@ function Form() {
         email: '',
         message: ''
     });
-    const [pending, setPending] = useState(false);
+    const [isPending, setIsPending] = useState(false);
     const [message, setMessage] = useState('');
 
     function onChange(event) {
-        setForm({...form, [event.target.name]: event.target.value});
+        setForm({ ...form, [event.target.name]: event.target.value });
     }
-    function onSubmit(event) {
+    async function onSubmit(event) {
         event.preventDefault();
 
-        if(pending){ return };
+        if (isPending) { return };
 
-        setPending(true);
-        fetch('/api/message', {
+        setIsPending(true);
+
+        const resposne = await fetch('https://sm4qmzs0lj.execute-api.us-east-1.amazonaws.com/portfolio/send/email',{
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {'content-type': 'application/json'},
             body: JSON.stringify(form)
-        })
-        .then(res => {
-            setPending(false);
-            setMessage(res.status !== 200 ? 'Internal Server Error. please try again' : "message sent");
-            document.getElementById('contact-form').reset();
-        }) 
-        
+        });
+
+        setIsPending(false);
+        setMessage(resposne.status === 200 ? 'Email Sent' : "Internal Server Error. please try again later");
+        document.getElementById('contact-form').reset();
     }
 
-    return(
+    return (
         <form id="contact-form" className={s.contactForm} onSubmit={onSubmit}>
-            <div style={{width: "100%",margin: "20px 0"}}>
+            <div style={{ width: "100%", margin: "20px 0" }}>
                 <div>
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name" onChange={onChange} required />
@@ -77,12 +76,12 @@ function Form() {
                     <textarea name="message" id="message" cols="30" rows="10" required minLength="20" onChange={onChange} required></textarea>
                 </div>
                 {message && <span>{message}</span>}
-                <button type="submit" className={pending ? s.disabled : undefined} disabled={pending}>
-                    {pending && <div className="lds-dual-ring"></div>}
-                    {!pending && <span>Send A Message</span>}
+                <button type="submit" className={isPending ? s.disabled : undefined} disabled={isPending}>
+                    {isPending && <div className="lds-dual-ring"></div>}
+                    {!isPending && <span>Send A Message</span>}
                 </button>
             </div>
-        </form>  
+        </form>
     )
 }
 
