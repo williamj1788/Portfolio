@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef } from 'react';
 
 import s from '../styles/Projects.module.scss';
@@ -103,20 +104,22 @@ function ProjectImgSection({ animation, children }) {
     const projectEl = useRef(null);
 
     const [index, setIndex] = useState(0);
+    const [scrollInterval, setScrollInterval] = useState(null);
+
 
     useEffect(() => {
         let hasIntersected = false;
-        let inv;
 
         const observer = new IntersectionObserver(ent => {
             // only want to set the interval once per project
-            if(ent[0].isIntersecting && !hasIntersected){
-                hasIntersected = true;
+            if(hasIntersected || !ent[0].isIntersecting) return;
+
+            hasIntersected = true;
                 
-                inv = setInterval(() => {
-                    setIndex(index => index >= children.length - 1 ? 0 : index + 1);
-                }, 3000);
-            }
+            setScrollInterval(setInterval(() => {
+                setIndex(index => index >= children.length - 1 ? 0 : index + 1);
+            }, 3000));
+
         }, {
             threshold: 0.33
         });
@@ -124,9 +127,18 @@ function ProjectImgSection({ animation, children }) {
         observer.observe(projectEl.current);
 
         return () => {
-            clearInterval(inv);
+            clearInterval(scrollInterval);
         }
-    }, []);
+    }, [children.length]);
+
+    function handleClick(index) {
+        setIndex(index);
+        clearInterval(scrollInterval);
+        setScrollInterval(setInterval(() => {
+            setIndex(index => index >= children.length - 1 ? 0 : index + 1);
+        }, 3000));
+
+    }
     return(
         <div ref={projectEl} className={`${s.projectImg} wow animated ${animation}`}>
             <div className={s.projectImgView}>
@@ -136,7 +148,7 @@ function ProjectImgSection({ animation, children }) {
             </div>
             <div className={s.selectContainer}>
                 {children.map((c, i) => (
-                    <button onClick={() => setIndex(i)} className={i === index ? s.active : undefined} key={i} />
+                    <button onClick={() => handleClick(i)} className={i === index ? s.active : undefined} key={i} />
                 ))}
             </div>
         </div>
