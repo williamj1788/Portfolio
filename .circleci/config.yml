@@ -29,10 +29,12 @@ workflows:
     build-deploy:
       jobs:
         - build:
-            requires:
-              - test
             filters:
               branches:
                 only:
                   - master
         - test
+            filters:
+                branches:
+                  ignore:
+                    - master
