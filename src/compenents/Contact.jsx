@@ -12,7 +12,7 @@ function Contact() {
     return (
         <section id='contact' className={s.contact}>
             <img className={s.top} src={top} alt="stuff" />
-            <Title>Contact</Title>
+            <Title>Contac</Title>
             <Bar color="white" />
             <div className={`${s.linkContainer} wow animated fadeInUp`}>
                 <a className={s.link} href={'https://github.com/williamj1788'} target='_blank' rel="noopener noreferrer">
