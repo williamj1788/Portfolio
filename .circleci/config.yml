@@ -8,6 +8,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Front End
+          command: npm install
+      - run:
           name: Building Front End
           command: npm run build
       - aws-s3/sync:
