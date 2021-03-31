@@ -1,7 +1,14 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      - node/test
+jobs:
+  build:
+    docker:
+      - image: node:12.16.2
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: echo 'Hello, World'
+      - run:
+          name: Show Files
+          command: ls -al
+
