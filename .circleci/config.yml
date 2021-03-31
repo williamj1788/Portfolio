@@ -11,4 +11,18 @@ jobs:
       - run:
           name: Show Files
           command: ls -al
+  test:
+    steps:
+      - run:
+          name: TEST OUT
+          command: echo 'NO TESTS'
 
+workflows:
+    version: 2
+    build-deploy:
+      jobs:
+        - build
+          filters:
+            only:
+              - master
+        - test
