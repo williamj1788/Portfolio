@@ -29,7 +29,7 @@ workflows:
     build-deploy:
       jobs:
         - build:
-            require:
+            requires:
               - test
             filters:
               branches:
