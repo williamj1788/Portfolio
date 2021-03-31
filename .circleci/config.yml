@@ -7,9 +7,17 @@ jobs:
       - image: node:12.16.2
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - node-{{ checksum "package-lock.json" }}
+            - node-
       - run:
           name: Install Front End
           command: npm install
+      - save_cache:
+          keys: node-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
       - run:
           name: Building Front End
           command: CI=false npm run build
