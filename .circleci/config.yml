@@ -13,7 +13,7 @@ jobs:
             - profolio-
       - run:
           name: Install Front End
-          command: npm install
+          command: npm install --no-audit --no-fund
       - save_cache:
           key: profolio-{{ checksum "package-lock.json" }}
           paths:
