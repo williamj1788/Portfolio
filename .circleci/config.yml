@@ -12,7 +12,7 @@ jobs:
           command: npm install
       - run:
           name: Building Front End
-          command: npm run build
+          command: CI=false npm run build
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
