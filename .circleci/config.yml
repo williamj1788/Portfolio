@@ -11,19 +11,28 @@ jobs:
           name: Building Front End
           command: npm build
       - aws-s3/sync:
-          aws-access-key-id: $AWS_ACCESS_KEY_ID
-          aws-region: $AWS_REGION
-          aws-secret-access-key: $AWS_SECRET_ACCESS_KEY
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: build
           to: 's3://www.jacquezwilliams.com'
-
+  test: 
+    docker:
+      - image: node:12.16.2
+    steps: 
+      - run: 
+          name: Run Tests
+          command: echo 'No Tests'
 
 workflows:
     version: 2
     build-deploy:
       jobs:
         - build:
+            require:
+              - test
             filters:
               branches:
                 only:
                   - master
+        - test
