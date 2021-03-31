@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  aws-s3: circleci/aws-s3@2.0.0
 jobs:
   build:
     docker:
@@ -6,18 +8,15 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Test
-          command: echo 'Hello, World'
-      - run:
-          name: Show Files
-          command: ls -al
-  test:
-    docker:
-      - image: node:12.16.2
-    steps:
-      - run:
-          name: TEST OUT
-          command: echo 'NO TESTS'
+          name: Building Front End
+          command: npm build
+      - aws-s3/sync:
+          aws-access-key-id: $AWS_ACCESS_KEY_ID
+          aws-region: $AWS_REGION
+          aws-secret-access-key: $AWS_SECRET_ACCESS_KEY
+          from: build
+          to: 's3://www.jacquezwilliams.com'
+
 
 workflows:
     version: 2
@@ -28,4 +27,3 @@ workflows:
               branches:
                 only:
                   - master
-        - test
