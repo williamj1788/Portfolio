@@ -64,7 +64,7 @@ function Form() {
         <form id="contact-form" className={s.contactForm} onSubmit={onSubmit}>
             <div style={{ width: "100%", margin: "20px 0" }}>
                 <div>
-                    <label htmlFor="name">NameSS:</label>
+                    <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name" onChange={onChange} required />
                 </div>
                 <div>
@@ -73,7 +73,7 @@ function Form() {
                 </div>
                 <div>
                     <label htmlFor="message">Message:</label>
-                    <textarea name="message" id="message" cols="30" rows="10" required minLength="20" onChange={onChange} required></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" required minLength="20" onChange={onChange}></textarea>
                 </div>
                 {message && <span>{message}</span>}
                 <button type="submit" className={isPending ? s.disabled : undefined} disabled={isPending}>
