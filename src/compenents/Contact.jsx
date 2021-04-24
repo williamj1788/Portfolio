@@ -64,7 +64,7 @@ function Form() {
         <form id="contact-form" className={s.contactForm} onSubmit={onSubmit}>
             <div style={{ width: "100%", margin: "20px 0" }}>
                 <div>
-                    <label htmlFor="name">NameS:</label>
+                    <label htmlFor="name">NameSS:</label>
                     <input type="text" id="name" name="name" onChange={onChange} required />
                 </div>
                 <div>

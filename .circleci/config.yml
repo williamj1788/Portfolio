@@ -27,6 +27,10 @@ jobs:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: build
           to: 's3://www.jacquezwilliams.com'
+      - aws-s3/copy:
+          arguments: '--cache-control "max-age=0"'
+          from: bucket/index.html
+          to: 's3://www.jacquezwilliams.com/index.html'
 
 workflows:
     version: 2
