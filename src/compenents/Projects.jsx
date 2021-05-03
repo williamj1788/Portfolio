@@ -45,7 +45,7 @@ function ProjectSection() {
                 landing page by 66%. Finally, I learned how to hash passwords and integrated JWTs, which allows 
                 for a more scalable and secure website.`}
                 tools={['React', "Node", 'Express', 'MongoDB', 'SCSS', 'Google Maps API']}
-                demo={'https://www.williamspizza1.ml'}
+                demo={'https://williamspizza.jacquezwilliams.com'}
                 source={'https://github.com/williamj1788/Williams-Pizza'}
                 animation={'slideInRight'}
                 />
