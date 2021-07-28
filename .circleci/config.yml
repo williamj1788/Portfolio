@@ -26,18 +26,18 @@ jobs:
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: build
-          to: 's3://www.jacquezwilliams.com'
+          to: "s3://jacquezwilliams-staticcontentbucket-1p24crowvlcrl"
       - aws-s3/copy:
           arguments: '--cache-control "max-age=0"'
           from: build/index.html
-          to: 's3://www.jacquezwilliams.com/index.html'
+          to: "s3://jacquezwilliams-staticcontentbucket-1p24crowvlcrl/index.html"
 
 workflows:
-    version: 2
-    build-deploy:
-      jobs:
-        - build:
-            filters:
-              branches:
-                only:
-                  - master
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
